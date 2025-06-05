@@ -1,0 +1,187 @@
+:host {
+  --cor-fundo-chat: #e5ddd5; /* Fundo similar ao WhatsApp antigo */
+  --cor-texto-geral: #333;
+  --cor-bolha-recebida: #ffffff; /* Bolha branca para recebidas */
+  --cor-bolha-enviada: #dcf8c6; /* Bolha verde claro para enviadas (vamos simular) */
+  --cor-primaria: #075e54; /* Verde escuro WhatsApp */
+  --cor-secundaria: #128c7e; /* Verde mais claro WhatsApp */
+  --cor-texto-input: #555;
+  --cor-borda-input: #ccc;
+  --cor-placeholder: #aaa;
+  --sombra-leve: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --border-radius-bolha: 10px;
+
+  display: flex;
+  flex-direction: column;
+  height: 90vh; /* Ocupar mais tela */
+  max-width: 600px; /* Mais estreito, como um chat mobile */
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  background-color: var(--cor-fundo-chat);
+  font-family: 'Segoe UI', Helvetica, Arial, sans-serif; /* Fonte comum em apps de chat */
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Faz o container crescer para preencher o :host */
+  overflow: hidden; /* Evita scroll no container principal */
+  background-color: var(--cor-fundo-chat); /* Wallpaper do chat */
+  /* Adicione uma imagem de fundo se quiser, como no WhatsApp */
+  /* background-image: url('path/to/whatsapp-bg.png'); */
+}
+
+/* Cabeçalho com seleção de instância - pode ser melhorado ou simplificado */
+.selecao-instancia {
+  padding: 10px;
+  background-color: var(--cor-primaria);
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.selecao-instancia button {
+  background-color: var(--cor-secundaria);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.selecao-instancia button.ativo {
+  background-color: white;
+  color: var(--cor-primaria);
+}
+h1 { /* O "Ta carregando" */
+  text-align: center;
+  font-size: 0.9em;
+  color: #777;
+  padding: 10px 0;
+  margin:0;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+}
+
+
+/* Área de Mensagens */
+.mensagens-recebidas {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column; /* Mensagens empilhadas */
+}
+
+.mensagem {
+  padding: 8px 12px;
+  border-radius: var(--border-radius-bolha);
+  margin-bottom: 10px;
+  max-width: 75%;
+  word-wrap: break-word;
+  box-shadow: var(--sombra-leve);
+  line-height: 1.4;
+}
+
+/* Simulação: como não sabemos quem enviou, vamos alternar ou definir um padrão */
+/* Para um chat real, você precisaria de uma classe .enviada e .recebida */
+.mensagem {
+  background-color: var(--cor-bolha-recebida);
+  align-self: flex-start; /* Alinha à esquerda por padrão */
+  color: var(--cor-texto-geral);
+}
+
+/* Exemplo se você PUDESSE distinguir (precisaria de [ngClass] no HTML):
+.mensagem.enviada-por-mim {
+  background-color: var(--cor-bolha-enviada);
+  align-self: flex-end;
+}
+*/
+
+.mensagem .texto {
+  font-size: 0.95em;
+  margin-bottom: 5px;
+}
+
+.mensagem .info {
+  font-size: 0.7em;
+  text-align: right;
+  color: #999; /* Cor do timestamp e status */
+}
+
+.mensagem .status {
+  margin-left: 5px;
+  font-weight: normal;
+}
+.mensagem .status.valida { color: var(--cor-secundaria); }
+.mensagem .status.invalida { color: var(--cor-erro); }
+
+.mensagem-vazia, .carregando {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+  padding: 20px;
+  margin: auto; /* Centraliza */
+}
+
+/* Área de Envio de Mensagem - Fixa no Rodapé */
+.envio-mensagem {
+  display: flex;
+  padding: 10px;
+  background-color: #f0f0f0; /* Fundo da área de input */
+  border-top: 1px solid #ddd;
+  align-items: center; /* Alinha textarea e botão verticalmente */
+}
+
+.envio-mensagem h3 { display: none; } /* Oculta o título "Enviar Mensagem" */
+
+.envio-mensagem textarea {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid var(--cor-borda-input);
+  border-radius: 20px; /* Bordas arredondadas como no WhatsApp */
+  min-height: 20px; /* Para começar pequeno */
+  max-height: 100px; /* Evita que cresça demais */
+  resize: none; /* Desabilita redimensionamento manual */
+  font-size: 0.95em;
+  line-height: 1.4;
+  margin-right: 10px;
+  color: var(--cor-texto-input);
+}
+.envio-mensagem textarea::placeholder {
+  color: var(--cor-placeholder);
+}
+
+.envio-mensagem button {
+  background-color: var(--cor-primaria);
+  color: white;
+  border: none;
+  border-radius: 50%; /* Botão redondo */
+  width: 44px;
+  height: 44px;
+  font-size: 1.2em; /* Ajuste para ícone de envio se usar */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Você pode usar um ícone de envio aqui (SVG, Font Awesome) */
+}
+.envio-mensagem button:hover {
+  background-color: var(--cor-secundaria);
+}
+
+.envio-mensagem .resposta {
+  /* Posicionar a resposta de forma diferente, talvez como um toast/snackbar */
+  position: fixed;
+  bottom: 70px; /* Acima da área de envio */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0,0,0,0.7);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 0.85em;
+  z-index: 100;
+}

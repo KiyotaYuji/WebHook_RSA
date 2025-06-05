@@ -1,0 +1,28 @@
+.status-conexao {
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.conectado {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.desconectado {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.botao-instancia.ativa {
+  background-color: #1565c0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.carregando {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+  font-style: italic;
+}

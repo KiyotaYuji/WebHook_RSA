@@ -1,0 +1,9 @@
+C:\Users\YujiKiyota\Faculdade\CriptoJava\rust_api\target\debug\deps\libderive_more-a7f4f08989d029f1.rmeta: C:\Users\YujiKiyota\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\derive_more-2.0.1\src\lib.rs C:\Users\YujiKiyota\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\derive_more-2.0.1\src\as.rs C:\Users\YujiKiyota\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\derive_more-2.0.1\src\vendor\mod.rs C:\Users\YujiKiyota\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\derive_more-2.0.1\src\vendor\thiserror\mod.rs C:\Users\YujiKiyota\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\derive_more-2.0.1\src\vendor\thiserror\aserror.rs
+
+C:\Users\YujiKiyota\Faculdade\CriptoJava\rust_api\target\debug\deps\derive_more-a7f4f08989d029f1.d: C:\Users\YujiKiyota\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\derive_more-2.0.1\src\lib.rs C:\Users\YujiKiyota\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\derive_more-2.0.1\src\as.rs C:\Users\YujiKiyota\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\derive_more-2.0.1\src\vendor\mod.rs C:\Users\YujiKiyota\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\derive_more-2.0.1\src\vendor\thiserror\mod.rs C:\Users\YujiKiyota\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\derive_more-2.0.1\src\vendor\thiserror\aserror.rs
+
+C:\Users\YujiKiyota\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\derive_more-2.0.1\src\lib.rs:
+C:\Users\YujiKiyota\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\derive_more-2.0.1\src\as.rs:
+C:\Users\YujiKiyota\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\derive_more-2.0.1\src\vendor\mod.rs:
+C:\Users\YujiKiyota\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\derive_more-2.0.1\src\vendor\thiserror\mod.rs:
+C:\Users\YujiKiyota\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\derive_more-2.0.1\src\vendor\thiserror\aserror.rs:

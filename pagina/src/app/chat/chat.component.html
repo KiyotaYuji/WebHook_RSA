@@ -1,0 +1,38 @@
+<div class="chat-container">
+  <!-- Seletor de instância -->
+  <div class="selecao-instancia">
+    <button (click)="selecionarInstancia(8080)" [class.ativo]="instanciaAtual === 8080">Instância 8080</button>
+    <button (click)="selecionarInstancia(8081)" [class.ativo]="instanciaAtual === 8081">Instância 8081</button>
+  </div>
+
+  <!-- Mensagens recebidas -->
+  <div class="mensagens-recebidas">
+    <h3>Mensagens Recebidas</h3>
+
+    <div *ngIf="carregando" class="carregando">
+      Carregando mensagens...
+    </div>
+
+    <ng-container *ngIf="!carregando">
+      <div *ngIf="mensagensRecebidas.length === 0" class="mensagem-vazia">
+        Nenhuma mensagem recebida ainda.
+      </div>
+      <div *ngFor="let msg of mensagensRecebidas" class="mensagem">
+        <div class="texto">{{ msg.texto }}</div>
+        <div class="info">
+          <span class="status" [ngClass]="{'valida': msg.assinaturaValida, 'invalida': !msg.assinaturaValida}">
+            {{ msg.assinaturaValida ? '✓ Assinatura Válida' : '✗ Assinatura Inválida' }}
+          </span>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- Envio de mensagem -->
+  <div class="envio-mensagem">
+    <h3>Enviar Mensagem</h3>
+    <textarea [(ngModel)]="mensagemParaEnviar" placeholder="Digite sua mensagem..."></textarea>
+    <button (click)="enviar()">Enviar</button>
+    <div *ngIf="respostaDoServidor" class="resposta">{{ respostaDoServidor }}</div>
+  </div>
+</div>
